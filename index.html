@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robert Bostick | Cybersecurity Analyst</title>
+<meta name="description" content="Robert Bostick — Cybersecurity student at CTU Online, Network+ candidate. SOC simulation, threat hunting, and IOC monitoring portfolio. Seeking remote Tier 1 SOC, technical support, security operations, or incident-triage roles.">
+<style>
+  :root {
+    --bg: #0a1628;
+    --bg2: #0e1f3a;
+    --card: #12294d;
+    --line: #1e3a5f;
+    --text: #e8eef7;
+    --muted: #9db4d0;
+    --accent: #4da3ff;
+    --accent2: #37d67a;
+    --warn: #f5b942;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px 60px; }
+
+  /* Hero */
+  header.hero {
+    text-align: center;
+    padding: 64px 20px 48px;
+    background: linear-gradient(180deg, #0d1f3d 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--line);
+  }
+  header.hero h1 { font-size: 2.4rem; letter-spacing: -0.5px; }
+  header.hero p.tagline {
+    color: var(--muted); font-size: 1.1rem; margin-top: 8px;
+  }
+  .focus {
+    display: inline-block; margin-top: 20px; padding: 12px 18px;
+    background: var(--bg2); border: 1px solid var(--line); border-radius: 8px;
+    color: var(--text); font-size: 0.98rem; max-width: 640px;
+  }
+  .focus strong { color: var(--accent2); }
+  .btns { margin-top: 28px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 11px 22px; border-radius: 6px;
+    font-weight: 600; font-size: 0.98rem; border: 1px solid var(--accent);
+  }
+  .btn.primary { background: var(--accent); color: #06121f; }
+  .btn.primary:hover { text-decoration: none; background: #6db4ff; }
+  .btn.ghost { color: var(--accent); background: transparent; }
+  .btn.ghost:hover { text-decoration: none; border-color: #6db4ff; }
+
+  /* Sections */
+  section { padding-top: 44px; }
+  h2 {
+    font-size: 1.35rem; margin-bottom: 6px;
+    padding-bottom: 8px; border-bottom: 2px solid var(--line);
+  }
+  .section-note { color: var(--muted); font-size: 0.95rem; margin-bottom: 18px; }
+
+  /* Project cards */
+  .project {
+    background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+    padding: 22px; margin-bottom: 20px;
+  }
+  .project h3 { font-size: 1.2rem; }
+  .project h3 span { color: var(--muted); font-weight: 400; font-size: 0.9rem; }
+  .project p { color: var(--text); margin-top: 8px; }
+  .project .honest {
+    margin-top: 10px; padding: 9px 12px; background: rgba(245,185,66,0.08);
+    border: 1px solid rgba(245,185,66,0.35); border-radius: 6px;
+    color: var(--warn); font-size: 0.9rem;
+  }
+  .project .links { margin-top: 12px; display: flex; gap: 16px; flex-wrap: wrap; font-size: 0.95rem; }
+  .shots { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+  .shots img {
+    width: 160px; height: 120px; object-fit: cover; object-position: top;
+    border-radius: 6px; border: 1px solid var(--line);
+  }
+  .shots a { display: block; }
+  video {
+    width: 100%; max-width: 560px; border-radius: 8px; margin-top: 14px;
+    border: 1px solid var(--line); background: #000; display: block;
+  }
+  .gap {
+    margin-top: 14px; color: var(--muted); font-size: 0.9rem; font-style: italic;
+  }
+  .tags { margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .tag {
+    background: var(--bg2); border: 1px solid var(--line); border-radius: 20px;
+    padding: 3px 12px; font-size: 0.85rem; color: var(--muted);
+  }
+
+  /* Two-column lists */
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 640px) { .cols { grid-template-columns: 1fr; } }
+  .box {
+    background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px;
+  }
+  .box h3 { font-size: 1.05rem; margin-bottom: 8px; }
+  .box ul { list-style: none; }
+  .box li { padding: 5px 0; border-bottom: 1px solid rgba(30,58,95,0.6); }
+  .box li:last-child { border-bottom: none; }
+  .box li small { color: var(--muted); display: block; font-size: 0.85rem; }
+
+  footer {
+    text-align: center; color: var(--muted); font-size: 0.9rem;
+    padding: 40px 20px 0;
+  }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <h1>Robert Bostick</h1>
+  <p class="tagline">Cybersecurity Student &middot; Network+ Candidate &middot; Security Operations Portfolio</p>
+  <div class="focus"><strong>Current focus:</strong> Seeking remote Tier 1 SOC, technical support, security operations, or incident-triage roles while completing Network+.</div>
+  <div class="btns">
+    <a class="btn primary" href="https://github.com/Rionangelfire">GitHub</a>
+    <a class="btn ghost" href="https://www.linkedin.com/in/robert-bostick-1938a0362/">LinkedIn</a>
+    <a class="btn ghost" href="https://github.com/Rionangelfire/cybersecurity-portfolio/blob/main/robert-bostick-resume-v4.pdf">Resume (PDF)</a>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section id="projects">
+    <h2>Featured Projects</h2>
+    <p class="section-note">Built while studying Computer Science (cybersecurity focus) at CTU Online. Learning builds, shown honestly — what each one does, and where its limits are.</p>
+
+    <div class="project">
+      <h3>Aegis Shield <span>&mdash; SOC simulation platform</span></h3>
+      <p>A lightweight SOC simulation platform. It simulates SOC telemetry with MITRE-mapped detection, tunable thresholds, and an audit trail — a learning build for detection logic and analyst workflow.</p>
+      <div class="tags">
+        <span class="tag">Telemetry</span>
+        <span class="tag">Event handling</span>
+        <span class="tag">Monitoring concepts</span>
+        <span class="tag">MITRE mapping</span>
+      </div>
+      <video controls preload="none" src="https://raw.githubusercontent.com/Rionangelfire/aegis-shield/main/aegis-shield-demo-video.mp4"></video>
+      <p class="gap">Demo video (0:50). Console screenshots below, from the live simulator.</p>
+      <div class="shots">
+        <a href="https://raw.githubusercontent.com/Rionangelfire/aegis-shield/main/aegis-standby-500-5-cropped.jpg"><img src="https://raw.githubusercontent.com/Rionangelfire/aegis-shield/main/aegis-standby-500-5-cropped.jpg" alt="Aegis Shield console at standby"></a>
+        <a href="https://raw.githubusercontent.com/Rionangelfire/aegis-shield/main/aegis-storm-550-5-cropped.jpg"><img src="https://raw.githubusercontent.com/Rionangelfire/aegis-shield/main/aegis-storm-550-5-cropped.jpg" alt="Aegis Shield console during a simulated storm"></a>
+        <a href="https://raw.githubusercontent.com/Rionangelfire/aegis-shield/main/aegis-ransomware-550-5-cropped.jpg"><img src="https://raw.githubusercontent.com/Rionangelfire/aegis-shield/main/aegis-ransomware-550-5-cropped.jpg" alt="Aegis Shield console during a simulated ransomware event"></a>
+      </div>
+      <div class="links">
+        <a href="https://github.com/Rionangelfire/aegis-shield">GitHub repo</a>
+        <a href="https://github.com/Rionangelfire/aegis-shield/blob/main/aegis-shield-portfolio.pdf">Portfolio packet (PDF)</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <h3>Echp <span>&mdash; Nova Echo AI simulator &amp; IOC monitor</span></h3>
+      <p>Built with Copilot and Gemini. A Gemini-powered tactical interface plus a Python monitor that matches log data against indicators and writes JSON alerts — a practice ground for AI-assisted security tooling.</p>
+      <video controls preload="none" src="https://raw.githubusercontent.com/Rionangelfire/echp/main/echp-demo-video.mp4"></video>
+      <p class="gap">Demo video (1:16). Screenshots coming.</p>
+      <div class="honest">Honest note: the chat interface needs a Gemini API key to run, and the indicators are placeholders.</div>
+      <div class="links">
+        <a href="https://github.com/Rionangelfire/echp">GitHub repo</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <h3>IOC Monitoring Project <span>&mdash; part of Echp</span></h3>
+      <p>A Python monitor (<code>ioc_monitor.py</code>) that watches log data over UDP syslog on port 514, extracts IP addresses, domains, and MD5 hashes, matches them against indicators of compromise, and writes scored JSON alerts. It turns raw log lines into structured alerts, so a pattern is visible instead of buried in text.</p>
+      <div class="honest">Built as a practice ground — the indicators it ships with are placeholders, and the email-alert step is not wired up. The JSON logging and SIEM alert output are the working parts.</div>
+      <div class="links">
+        <a href="https://github.com/Rionangelfire/echp/blob/main/ioc_monitor.py">ioc_monitor.py on GitHub</a>
+        <a href="https://github.com/Rionangelfire/echp">Echp repo</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <h3>File Carving Arcade</h3>
+      <p>A portable browser-based arcade game built around file carving — recovering hidden files from data.</p>
+      <p class="gap">Screenshots and source repository once published.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills — Evidence-Based</h2>
+    <p class="section-note">Only what can be shown. Nothing here is claimed without something behind it.</p>
+    <div class="cols">
+      <div class="box">
+        <h3>Working With</h3>
+        <ul>
+          <li>GitHub<small>Profile, repos, and Pages live — see the projects above</small></li>
+          <li>Remote Desktop<small>Planned cybersecurity and productivity workflows</small></li>
+          <li>Windows Sandbox<small>Used for cybersecurity learning and experimentation</small></li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Learning</h3>
+        <ul>
+          <li>CompTIA Network+<small>In progress — see Certifications</small></li>
+          <li>CompTIA Security+<small>Next after Network+</small></li>
+          <li>Hack The Box<small>Training platform for penetration testing and threat hunting</small></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="certs">
+    <h2>Education &amp; Certifications</h2>
+    <div class="cols">
+      <div class="box">
+        <h3>Current</h3>
+        <ul>
+          <li>CTU Online — B.S. Computer Science, Cybersecurity focus<small>Junior, 123 of 183 credits, expected June 2028</small></li>
+          <li>ServSafe Food Protection Manager<small>Examined Dec 2022, expires Dec 2027</small></li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>In Progress</h3>
+        <ul>
+          <li>CompTIA Network+<small>Studying now</small></li>
+        </ul>
+        <h3 style="margin-top: 16px;">Planned</h3>
+        <ul>
+          <li>CompTIA Security+</li>
+          <li>Splunk Core User</li>
+          <li>Microsoft SC-900</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>LinkedIn and GitHub only.</p>
+    <div class="btns" style="justify-content: flex-start;">
+      <a class="btn primary" href="https://www.linkedin.com/in/robert-bostick-1938a0362/">LinkedIn</a>
+      <a class="btn ghost" href="https://github.com/Rionangelfire">GitHub</a>
+    </div>
+  </section>
+
+  <footer>
+    Hillsboro, Texas &middot; Open to remote work &middot; <a href="https://github.com/Rionangelfire">github.com/Rionangelfire</a>
+  </footer>
+
+</div>
+</body>
+</html>
