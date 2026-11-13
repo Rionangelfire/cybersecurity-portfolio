@@ -26,7 +26,7 @@ All telemetry is simulated (mock packet headers and synthetic events) for learni
 Hash-chained log (SHA-256) with a verification script — append-only records where any edit breaks the chain. Tamper-evident, not tamper-proof.
 
 ## Skills
-Python · JavaScript · HTML/CSS · SQL · JSON · GitHub · Wireshark (packet capture and traffic inspection in lab environments)
+Python · JavaScript · HTML/CSS · SQL · JSON · GitHub
 
 ## Goal
 Junior SOC analyst / technical support roles, building toward Security+.
