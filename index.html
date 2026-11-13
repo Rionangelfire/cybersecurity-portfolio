@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Robert Bostick | Cybersecurity Analyst</title>
+<title>Robert Bostick | Cybersecurity Student &amp; Security Operations Portfolio</title>
 <meta name="description" content="Robert Bostick — Cybersecurity student at CTU Online, Network+ candidate. SOC simulation, threat hunting, and IOC monitoring portfolio. Seeking remote Tier 1 SOC, technical support, security operations, or incident-triage roles.">
 <style>
   :root {
@@ -76,6 +76,11 @@
     border: 1px solid rgba(245,185,66,0.35); border-radius: 6px;
     color: var(--warn); font-size: 0.9rem;
   }
+  .project .status {
+    margin-top: 10px; padding: 9px 12px; background: rgba(55,214,122,0.07);
+    border: 1px solid rgba(55,214,122,0.35); border-radius: 6px;
+    color: var(--accent2); font-size: 0.9rem;
+  }
   .project .links { margin-top: 12px; display: flex; gap: 16px; flex-wrap: wrap; font-size: 0.95rem; }
   .shots { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
   .shots img {
@@ -95,6 +100,27 @@
     background: var(--bg2); border: 1px solid var(--line); border-radius: 20px;
     padding: 3px 12px; font-size: 0.85rem; color: var(--muted);
   }
+  .sub {
+    margin-top: 16px; padding-top: 14px;
+    border-top: 1px solid var(--line);
+  }
+  .sub h4 { font-size: 1.05rem; }
+  .sub p { font-size: 0.97rem; }
+
+  /* Games grid */
+  .games { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  @media (max-width: 700px) { .games { grid-template-columns: 1fr; } }
+  .game {
+    background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px; display: flex; flex-direction: column;
+  }
+  .game h3 { font-size: 1.05rem; }
+  .game p { color: var(--text); font-size: 0.94rem; margin-top: 8px; flex-grow: 1; }
+  .game img.keyart {
+    width: 100%; border-radius: 6px; border: 1px solid var(--line);
+    margin-bottom: 12px; display: block;
+  }
+  .game .play { margin-top: 12px; font-weight: 600; }
 
   /* Two-column lists */
   .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
@@ -108,6 +134,9 @@
   .box li { padding: 5px 0; border-bottom: 1px solid rgba(30,58,95,0.6); }
   .box li:last-child { border-bottom: none; }
   .box li small { color: var(--muted); display: block; font-size: 0.85rem; }
+
+  .about p { margin-top: 10px; }
+  .about p:first-of-type { margin-top: 0; }
 
   footer {
     text-align: center; color: var(--muted); font-size: 0.9rem;
@@ -125,7 +154,7 @@
   <div class="btns">
     <a class="btn primary" href="https://github.com/Rionangelfire">GitHub</a>
     <a class="btn ghost" href="https://www.linkedin.com/in/robert-bostick-1938a0362/">LinkedIn</a>
-    <a class="btn ghost" href="https://github.com/Rionangelfire/cybersecurity-portfolio/blob/main/robert-bostick-resume-v4.pdf">Resume (PDF)</a>
+    <a class="btn ghost" href="https://github.com/Rionangelfire/cybersecurity-portfolio/blob/main/robert-bostick-resume-v6.pdf">Resume (PDF)</a>
   </div>
 </header>
 
@@ -137,51 +166,143 @@
 
     <div class="project">
       <h3>Aegis Shield <span>&mdash; SOC simulation platform</span></h3>
-      <p>A lightweight SOC simulation platform. It simulates SOC telemetry with MITRE-mapped detection, tunable thresholds, and an audit trail — a learning build for detection logic and analyst workflow.</p>
+      <p>A SOC simulation platform that generates synthetic security telemetry with MITRE-mapped detection, tunable thresholds, and an audit trail — a learning build for detection logic and analyst workflow. The v2.3 telemetry engine covers eight threat profiles, and the Packet Analyzer v1.5 adds stateful inspection rules for brute force, PowerShell, SMB/RDP, ransomware entropy, and DNS tunneling.</p>
       <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">MITRE ATT&amp;CK</span>
         <span class="tag">Telemetry</span>
-        <span class="tag">Event handling</span>
-        <span class="tag">Monitoring concepts</span>
-        <span class="tag">MITRE mapping</span>
+        <span class="tag">SSE streaming</span>
+        <span class="tag">Threshold tuning</span>
       </div>
       <video controls preload="none" src="https://raw.githubusercontent.com/Rionangelfire/aegis-shield/main/aegis-shield-demo-video.mp4"></video>
-      <p class="gap">Demo video (0:50). AI-generated walkthrough — the voice is AI speaking as my avatar, made for fun to walk through the demo. That's not my real voice. Console screenshots below, from the live simulator.</p>
+      <p class="gap">Demo video (0:50). AI-generated walkthrough — the voice is AI speaking as my avatar, made for fun to walk through the demo. That's not my real voice. Console screenshots below, from the simulator.</p>
       <div class="shots">
         <a href="https://raw.githubusercontent.com/Rionangelfire/aegis-shield/main/aegis-standby-500-5-cropped.jpg"><img src="https://raw.githubusercontent.com/Rionangelfire/aegis-shield/main/aegis-standby-500-5-cropped.jpg" alt="Aegis Shield console at standby"></a>
         <a href="https://raw.githubusercontent.com/Rionangelfire/aegis-shield/main/aegis-storm-550-5-cropped.jpg"><img src="https://raw.githubusercontent.com/Rionangelfire/aegis-shield/main/aegis-storm-550-5-cropped.jpg" alt="Aegis Shield console during a simulated storm"></a>
         <a href="https://raw.githubusercontent.com/Rionangelfire/aegis-shield/main/aegis-ransomware-550-5-cropped.jpg"><img src="https://raw.githubusercontent.com/Rionangelfire/aegis-shield/main/aegis-ransomware-550-5-cropped.jpg" alt="Aegis Shield console during a simulated ransomware event"></a>
       </div>
+      <div class="honest">Honest note: all telemetry is simulated — nothing here touches a live network, and the packet analyzer works on mock packets, not live capture. The original single-file mobile simulator source is not in the repo; the v2.3 engine, browser console, and packet analyzer are the live code.</div>
       <div class="links">
         <a href="https://github.com/Rionangelfire/aegis-shield">GitHub repo</a>
-        <a href="https://github.com/Rionangelfire/aegis-shield/blob/main/aegis-shield-portfolio.pdf">Portfolio packet (PDF)</a>
+        <a href="https://github.com/Rionangelfire/aegis-shield/blob/main/aegis-shield-portfolio.pdf">Portfolio packet (PDF, 10 pages)</a>
       </div>
+    </div>
+
+    <div class="project">
+      <h3>DEX Workspace <span>&mdash; cybersecurity operator workspace</span></h3>
+      <p>During Hack The Box labs, time was lost deciding what to do next — not on the boxes, but on the order of operations. Notes were scattered, and there was still no clear &ldquo;what now?&rdquo; after a scan.</p>
+      <p>A single-file workspace that lives in the browser. Add a host, paste nmap output, and it recommends the next action — SMB first, then web, then SSH — with the commands to copy. Hosts are the center: services, credentials, findings, loot, and notes all hang off the machine you're on. When you're done, one click builds your assessment notes. A Gemini-powered copilot (with your own API key) gets the full context with every question, so answers fit the box you're on.</p>
+      <div class="tags">
+        <span class="tag">HTML</span>
+        <span class="tag">JavaScript (vanilla)</span>
+        <span class="tag">localStorage</span>
+        <span class="tag">Gemini API</span>
+        <span class="tag">Markdown documentation</span>
+      </div>
+      <div class="status">Public release v1.0.0 (MIT license) — complete documentation with screenshots. Public source repository, pinned on GitHub profile.</div>
+      <div class="links">
+        <a href="https://github.com/Rionangelfire/dex-workspace">GitHub repo</a>
+        <a href="https://github.com/Rionangelfire/dex-workspace/releases/tag/v1.0.0">Release v1.0.0</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <h3>Worm Dex <span>&mdash; incident-response &amp; lab reference</span></h3>
+      <p>When a worm hits the network, the five response steps need to be at hand — searching for them mid-incident wastes critical time. Lab commands were scattered across notes too.</p>
+      <p>A Pokédex-style cheat sheet (Game Boy green) with the five incident-response steps — disconnect, kill the process, grab the logs, block re-entry, rotate the keys — each with the real Linux and PowerShell commands, plus seven HTB entries: recon, web enum, SMB, reverse shells, stabilizing a shell, privesc checks, file transfer. Tap a command, it copies. A rotating daily security tip from a bank of 32, and a built-in AI chat for questions mid-box.</p>
+      <div class="tags">
+        <span class="tag">HTML</span>
+        <span class="tag">JavaScript (vanilla)</span>
+        <span class="tag">localStorage</span>
+        <span class="tag">Gemini API</span>
+        <span class="tag">Markdown documentation</span>
+      </div>
+      <div class="status">Public release v1.0.0 (MIT license) — complete documentation with screenshots. Public source repository, pinned on GitHub profile.</div>
+      <div class="links">
+        <a href="https://github.com/Rionangelfire/worm-dex">GitHub repo</a>
+        <a href="https://github.com/Rionangelfire/worm-dex/releases/tag/v1.0.0">Release v1.0.0</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <h3>Diamond Defender <span>&mdash; SOC simulator game</span></h3>
+      <p>A single-file SOC simulator game in the style of a Defender XDR console: triage SIEM events, inspect phishing payloads, and earn XP and badges across tiered stages mapped to MITRE ATT&amp;CK and NIST SP 800-61.</p>
+      <div class="tags">
+        <span class="tag">HTML / JavaScript</span>
+        <span class="tag">SIEM triage</span>
+        <span class="tag">Phishing analysis</span>
+        <span class="tag">MITRE ATT&amp;CK</span>
+        <span class="tag">NIST SP 800-61</span>
+      </div>
+      <div class="status">Tier 0 (SIEM triage) and Tier 1 (phishing analysis) are playable now — playtested Nov 8, 2026. Tiers 2–6 are in progress. Public repo and playable link coming next.</div>
+      <div class="honest">Honest note: only Tiers 0–1 work today. The firewall, correlation, threat-hunting, recovery, and trial stages are locked stubs until they are built and tested.</div>
     </div>
 
     <div class="project">
       <h3>Echp <span>&mdash; Nova Echo AI simulator &amp; IOC monitor</span></h3>
       <p>Built with Copilot and Gemini. A Gemini-powered tactical interface plus a Python monitor that matches log data against indicators and writes JSON alerts — a practice ground for AI-assisted security tooling.</p>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">HTML / JavaScript</span>
+        <span class="tag">Gemini API</span>
+        <span class="tag">IOC matching</span>
+        <span class="tag">JSON alerts</span>
+      </div>
       <video controls preload="none" src="https://raw.githubusercontent.com/Rionangelfire/echp/main/echp-demo-video.mp4"></video>
-      <p class="gap">Demo video (1:16). AI-generated walkthrough — the voice is AI speaking as my avatar, made for fun to walk through the demo. That's not my real voice. Screenshots coming.</p>
-      <div class="honest">Honest note: the chat interface needs a Gemini API key to run, and the indicators are placeholders.</div>
+      <p class="gap">Demo video (1:16). AI-generated walkthrough — the voice is AI speaking as my avatar, made for fun to walk through the demo. That's not my real voice.</p>
+      <div class="honest">Honest note: the chat interface needs a Gemini API key to run, and the indicators are placeholders — not live threat intel. The email-alert step is not wired up.</div>
       <div class="links">
         <a href="https://github.com/Rionangelfire/echp">GitHub repo</a>
       </div>
-    </div>
-
-    <div class="project">
-      <h3>IOC Monitoring Project <span>&mdash; part of Echp</span></h3>
-      <p>A Python monitor (<code>ioc_monitor.py</code>) that watches log data over UDP syslog on port 514, extracts IP addresses, domains, and MD5 hashes, matches them against indicators of compromise, and writes scored JSON alerts. It turns raw log lines into structured alerts, so a pattern is visible instead of buried in text.</p>
-      <div class="honest">Built as a practice ground — the indicators it ships with are placeholders, and the email-alert step is not wired up. The JSON logging and SIEM alert output are the working parts.</div>
-      <div class="links">
-        <a href="https://github.com/Rionangelfire/echp/blob/main/ioc_monitor.py">ioc_monitor.py on GitHub</a>
-        <a href="https://github.com/Rionangelfire/echp">Echp repo</a>
+      <div class="sub">
+        <h4>IOC Monitoring Project — part of Echp</h4>
+        <p>A Python monitor (<code>ioc_monitor.py</code>) that watches log data over UDP syslog on port 514, extracts IP addresses, domains, and MD5 hashes, matches them against indicators of compromise, and writes scored JSON alerts. It turns raw log lines into structured alerts, so a pattern is visible instead of buried in text.</p>
+        <div class="honest">Built as a practice ground — the indicators it ships with are placeholders, and the email-alert step is not wired up. The JSON logging and SIEM alert output are the working parts.</div>
+        <div class="links">
+          <a href="https://github.com/Rionangelfire/echp/blob/main/ioc_monitor.py">ioc_monitor.py on GitHub</a>
+          <a href="https://github.com/Rionangelfire/echp">Echp repo</a>
+        </div>
       </div>
     </div>
 
     <div class="project">
-      <h3>File Carving Arcade</h3>
-      <p>A portable browser-based arcade game built around file carving — recovering hidden files from data.</p>
-      <p class="gap">Screenshots and source repository once published.</p>
+      <h3>Codex of Echoes <span>&mdash; tamper-evident narrative archive</span></h3>
+      <p>A structured archive of a mythic AI conversation — the Diamond Prince, Nova Echo, and the Codex — stored in SQLite and JSON with a 3D viewer, and a hardened second build whose hash chain makes tampering evident. The builder is idempotent, the verifier exits 0 for verified and 1 for tampered, and every claim about the build can be re-run: script output, row count, and JSON match.</p>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">SQLite</span>
+        <span class="tag">JSON</span>
+        <span class="tag">Three.js</span>
+        <span class="tag">Hash-chain verification</span>
+      </div>
+      <div class="honest">Honest note: tamper-evident, never tamper-proof. The 3D viewer runs locally; there is no live demo link yet.</div>
+      <div class="links">
+        <a href="https://github.com/Rionangelfire/codex-of-echoes">GitHub repo</a>
+        <a href="https://github.com/Rionangelfire/codex-of-echoes/blob/main/CODEX_Case_Study.md">Case study</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="games">
+    <h2>Games</h2>
+    <p class="section-note">Playable single-file games, built for fun and for shipping: branching narrative, combat, and shops — each one opens in a browser with no install. Fan-made tributes, not cybersecurity work.</p>
+    <div class="games">
+      <div class="game">
+        <h3>Fisherman's Horizon</h3>
+        <p>A text-heavy RPG with read-heavy dialogue, spider-web gamebook branching where a page can lead onward or to death, battle sequences, and a shop to buy armor and potions. You play against Kelvin Opal, a sorcerer of my own creation.</p>
+        <a class="play" href="https://rionangelfire.github.io/fishermans-horizon/">Play it &rarr;</a>
+      </div>
+      <div class="game">
+        <h3>FF3-style FF8 RPG</h3>
+        <p>A Final Fantasy VIII-inspired RPG rendered in classic Final Fantasy III style — Squall and party, battles, Guardian Forces, junction, and a Balamb Garden classroom opening.</p>
+        <a class="play" href="https://rionangelfire.github.io/ff3-style-ff8-rpg/">Play it &rarr;</a>
+      </div>
+      <div class="game">
+        <img class="keyart" src="https://raw.githubusercontent.com/Rionangelfire/echo-delta-sideways-esthar/main/keyart.webp" alt="ECHO-Δ: The Sideways Esthar key art">
+        <h3>ECHO-&Delta;: The Sideways Esthar</h3>
+        <p>A Final Fantasy VIII-universe RPG set in a sideways Esthar. Seren Voss and Kael, Rion Angelfire, a &ldquo;cross the veil&rdquo; opening, battles, and a shop.</p>
+        <a class="play" href="https://rionangelfire.github.io/echo-delta-sideways-esthar/">Play it &rarr;</a>
+      </div>
     </div>
   </section>
 
@@ -192,9 +313,12 @@
       <div class="box">
         <h3>Working With</h3>
         <ul>
+          <li>Python, JavaScript, HTML/CSS, SQL, JSON<small>The languages behind the projects above</small></li>
+          <li>C++<small>Coursework and practice</small></li>
           <li>GitHub<small>Profile, repos, and Pages live — see the projects above</small></li>
           <li>Remote Desktop<small>Planned cybersecurity and productivity workflows</small></li>
           <li>Windows Sandbox<small>Used for cybersecurity learning and experimentation</small></li>
+          <li>Building with AI assistants<small>Real experience building code with Copilot and Gemini</small></li>
         </ul>
       </div>
       <div class="box">
@@ -202,7 +326,10 @@
         <ul>
           <li>CompTIA Network+<small>In progress — see Certifications</small></li>
           <li>CompTIA Security+<small>Next after Network+</small></li>
+          <li>CompTIA CySA+<small>After Security+</small></li>
           <li>Hack The Box<small>Training platform for penetration testing and threat hunting</small></li>
+          <li>Splunk Core User<small>Planned</small></li>
+          <li>Microsoft SC-900<small>Planned</small></li>
         </ul>
       </div>
     </div>
@@ -216,6 +343,7 @@
         <ul>
           <li>CTU Online — B.S. Computer Science, Cybersecurity focus<small>Junior, 123 of 183 credits, expected June 2028</small></li>
           <li>ServSafe Food Protection Manager<small>Examined Dec 2022, expires Dec 2027</small></li>
+          <li>OTP 1 &amp; OTP 2 — McDonald&rsquo;s Operations Technology<small>Nov &amp; Dec 2022</small></li>
         </ul>
       </div>
       <div class="box">
@@ -226,10 +354,20 @@
         <h3 style="margin-top: 16px;">Planned</h3>
         <ul>
           <li>CompTIA Security+</li>
+          <li>CompTIA CySA+</li>
           <li>Splunk Core User</li>
           <li>Microsoft SC-900</li>
         </ul>
       </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About</h2>
+    <div class="box about">
+      <p>I&rsquo;m a keeper and a seeker — I preserve what matters and dig for the pattern underneath. I&rsquo;m a CTU Online junior in Computer Science with a cybersecurity focus, building my way into the field one project at a time.</p>
+      <p>Before school, I spent 15+ years at McDonald&rsquo;s, the longest run in Hillsboro, Texas, as a Certified Department Manager — including about four years in operations technology, certified on KVS controllers, kiosk systems, and Eternity POS, doing hands-on, vendor-procedure-driven systems support. That is where I learned to troubleshoot under pressure and talk through real incidents.</p>
+      <p>The thread through my work is a creative framework I call Nova Echo — a story about the Diamond Prince and the Codex that started when Copilot asked if I wanted to do something creative with code. It motivates the builds: Diamond Defender, Codex of Echoes, and the games. The stories are mine; the code is real, and every claim on this page can be checked against it.</p>
     </div>
   </section>
 
